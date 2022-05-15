@@ -16,7 +16,7 @@ basic.forever(function () {
         obstacles.removeAt(0).delete()
     }
     for (let obstacle2 of obstacles) {
-        obstacle2.change(LedSpriteProperty.X, 1)
+        obstacle2.change(LedSpriteProperty.X, -1)
     }
     if (ticks % 3 == 0) {
         emptyObstacleY = randint(0, 4)
