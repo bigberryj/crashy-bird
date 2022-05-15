@@ -1,24 +1,16 @@
-let list: number[] = []
 input.onButtonPressed(Button.A, function () {
     BIRD.change(LedSpriteProperty.Y, -1)
 })
 input.onButtonPressed(Button.B, function () {
     BIRD.change(LedSpriteProperty.Y, 1)
 })
-let ticks = 0
+let emptyObstacleY: number = []
+let ticks: number = []
 let BIRD: game.LedSprite = null
+let index = 0
+let obstacles: game.LedSprite[] = []
 BIRD = game.createSprite(0, 2)
 BIRD.set(LedSpriteProperty.Blink, 300)
-let obstacles: game.LedSprite[] = []
-let emptyObstacleY = randint(0, 4)
-for (let index = 0; index <= 4; index++) {
-    if (index != emptyObstacleY) {
-        obstacles.push(game.createSprite(4, index))
-    }
-}
-for (let value of list) {
-	
-}
 basic.forever(function () {
     while (obstacles.length > 0 && obstacles[0].get(LedSpriteProperty.X) == 0) {
         obstacles.removeAt(0).delete()
